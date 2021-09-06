@@ -1,8 +1,8 @@
-﻿using EmployeeWebAPIProject.Models;
+﻿using EmployeeWebAPI.Models;
 using System;
 using System.Collections.Generic;
 
-namespace EmployeeWebAPIProject.Dtos
+namespace EmployeeWebAPI.Dtos
 {
     public class UpdateEmployeeDto : BaseEntity
     {

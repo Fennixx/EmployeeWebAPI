@@ -1,4 +1,4 @@
-﻿namespace EmployeeWebAPIProject.Models
+﻿namespace EmployeeWebAPI.Models
 {
     public class Country : BaseEntity
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace EmployeeWebAPIProject.Migrations
+namespace EmployeeWebAPI.Migrations
 {
     public partial class FixSuperior : Migration
     {

@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using EmployeeWebAPIProject.Data;
+using EmployeeWebAPI.Data;
 
-namespace EmployeeWebAPIProject.Migrations
+namespace EmployeeWebAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
     partial class DataContextModelSnapshot : ModelSnapshot
@@ -19,7 +19,7 @@ namespace EmployeeWebAPIProject.Migrations
                 .HasAnnotation("ProductVersion", "5.0.9")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("EmployeeWebAPIProject.Models.Address", b =>
+            modelBuilder.Entity("EmployeeWebAPI.Models.Address", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -54,7 +54,7 @@ namespace EmployeeWebAPIProject.Migrations
                     b.ToTable("Addresses");
                 });
 
-            modelBuilder.Entity("EmployeeWebAPIProject.Models.City", b =>
+            modelBuilder.Entity("EmployeeWebAPI.Models.City", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -76,7 +76,7 @@ namespace EmployeeWebAPIProject.Migrations
                     b.ToTable("Cities");
                 });
 
-            modelBuilder.Entity("EmployeeWebAPIProject.Models.Country", b =>
+            modelBuilder.Entity("EmployeeWebAPI.Models.Country", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -91,7 +91,7 @@ namespace EmployeeWebAPIProject.Migrations
                     b.ToTable("Countries");
                 });
 
-            modelBuilder.Entity("EmployeeWebAPIProject.Models.Employee", b =>
+            modelBuilder.Entity("EmployeeWebAPI.Models.Employee", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -166,7 +166,7 @@ namespace EmployeeWebAPIProject.Migrations
                         });
                 });
 
-            modelBuilder.Entity("EmployeeWebAPIProject.Models.JobCategory", b =>
+            modelBuilder.Entity("EmployeeWebAPI.Models.JobCategory", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -186,7 +186,7 @@ namespace EmployeeWebAPIProject.Migrations
                     b.ToTable("JobCategories");
                 });
 
-            modelBuilder.Entity("EmployeeWebAPIProject.Models.Salary", b =>
+            modelBuilder.Entity("EmployeeWebAPI.Models.Salary", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -212,16 +212,16 @@ namespace EmployeeWebAPIProject.Migrations
                     b.ToTable("Salaries");
                 });
 
-            modelBuilder.Entity("EmployeeWebAPIProject.Models.Address", b =>
+            modelBuilder.Entity("EmployeeWebAPI.Models.Address", b =>
                 {
-                    b.HasOne("EmployeeWebAPIProject.Models.City", "City")
+                    b.HasOne("EmployeeWebAPI.Models.City", "City")
                         .WithOne("Address")
-                        .HasForeignKey("EmployeeWebAPIProject.Models.Address", "CityId")
+                        .HasForeignKey("EmployeeWebAPI.Models.Address", "CityId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("EmployeeWebAPIProject.Models.Country", "Country")
+                    b.HasOne("EmployeeWebAPI.Models.Country", "Country")
                         .WithOne("Address")
-                        .HasForeignKey("EmployeeWebAPIProject.Models.Address", "CountryId")
+                        .HasForeignKey("EmployeeWebAPI.Models.Address", "CountryId")
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("City");
@@ -229,36 +229,36 @@ namespace EmployeeWebAPIProject.Migrations
                     b.Navigation("Country");
                 });
 
-            modelBuilder.Entity("EmployeeWebAPIProject.Models.City", b =>
+            modelBuilder.Entity("EmployeeWebAPI.Models.City", b =>
                 {
-                    b.HasOne("EmployeeWebAPIProject.Models.Country", "Country")
+                    b.HasOne("EmployeeWebAPI.Models.Country", "Country")
                         .WithOne("City")
-                        .HasForeignKey("EmployeeWebAPIProject.Models.City", "CountryId")
+                        .HasForeignKey("EmployeeWebAPI.Models.City", "CountryId")
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Country");
                 });
 
-            modelBuilder.Entity("EmployeeWebAPIProject.Models.Employee", b =>
+            modelBuilder.Entity("EmployeeWebAPI.Models.Employee", b =>
                 {
-                    b.HasOne("EmployeeWebAPIProject.Models.Address", "Address")
+                    b.HasOne("EmployeeWebAPI.Models.Address", "Address")
                         .WithOne("Employee")
-                        .HasForeignKey("EmployeeWebAPIProject.Models.Employee", "AddressId")
+                        .HasForeignKey("EmployeeWebAPI.Models.Employee", "AddressId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("EmployeeWebAPIProject.Models.Country", "Country")
+                    b.HasOne("EmployeeWebAPI.Models.Country", "Country")
                         .WithOne("Employee")
-                        .HasForeignKey("EmployeeWebAPIProject.Models.Employee", "CountryId")
+                        .HasForeignKey("EmployeeWebAPI.Models.Employee", "CountryId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("EmployeeWebAPIProject.Models.Employee", null)
+                    b.HasOne("EmployeeWebAPI.Models.Employee", null)
                         .WithMany("Subordinates")
                         .HasForeignKey("EmployeeId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("EmployeeWebAPIProject.Models.Employee", "Superior")
+                    b.HasOne("EmployeeWebAPI.Models.Employee", "Superior")
                         .WithOne()
-                        .HasForeignKey("EmployeeWebAPIProject.Models.Employee", "SuperiorId")
+                        .HasForeignKey("EmployeeWebAPI.Models.Employee", "SuperiorId")
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Address");
@@ -268,18 +268,18 @@ namespace EmployeeWebAPIProject.Migrations
                     b.Navigation("Superior");
                 });
 
-            modelBuilder.Entity("EmployeeWebAPIProject.Models.JobCategory", b =>
+            modelBuilder.Entity("EmployeeWebAPI.Models.JobCategory", b =>
                 {
-                    b.HasOne("EmployeeWebAPIProject.Models.Employee", "Employee")
+                    b.HasOne("EmployeeWebAPI.Models.Employee", "Employee")
                         .WithMany("JobCategories")
                         .HasForeignKey("EmployeeId");
 
                     b.Navigation("Employee");
                 });
 
-            modelBuilder.Entity("EmployeeWebAPIProject.Models.Salary", b =>
+            modelBuilder.Entity("EmployeeWebAPI.Models.Salary", b =>
                 {
-                    b.HasOne("EmployeeWebAPIProject.Models.Employee", "Employee")
+                    b.HasOne("EmployeeWebAPI.Models.Employee", "Employee")
                         .WithMany("Salaries")
                         .HasForeignKey("SalaryIds")
                         .OnDelete(DeleteBehavior.Restrict);
@@ -287,17 +287,17 @@ namespace EmployeeWebAPIProject.Migrations
                     b.Navigation("Employee");
                 });
 
-            modelBuilder.Entity("EmployeeWebAPIProject.Models.Address", b =>
+            modelBuilder.Entity("EmployeeWebAPI.Models.Address", b =>
                 {
                     b.Navigation("Employee");
                 });
 
-            modelBuilder.Entity("EmployeeWebAPIProject.Models.City", b =>
+            modelBuilder.Entity("EmployeeWebAPI.Models.City", b =>
                 {
                     b.Navigation("Address");
                 });
 
-            modelBuilder.Entity("EmployeeWebAPIProject.Models.Country", b =>
+            modelBuilder.Entity("EmployeeWebAPI.Models.Country", b =>
                 {
                     b.Navigation("Address");
 
@@ -306,7 +306,7 @@ namespace EmployeeWebAPIProject.Migrations
                     b.Navigation("Employee");
                 });
 
-            modelBuilder.Entity("EmployeeWebAPIProject.Models.Employee", b =>
+            modelBuilder.Entity("EmployeeWebAPI.Models.Employee", b =>
                 {
                     b.Navigation("JobCategories");
 

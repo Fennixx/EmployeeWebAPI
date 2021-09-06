@@ -1,14 +1,14 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using EmployeeWebAPIProject.Data;
-using EmployeeWebAPIProject.Dtos;
-using EmployeeWebAPIProject.Models;
+using EmployeeWebAPI.Data;
+using EmployeeWebAPI.Dtos;
+using EmployeeWebAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EmployeeWebAPIProject.Repositories
+namespace EmployeeWebAPI.Repositories
 {
     public class SalaryRepository : ISalaryRepository
     {

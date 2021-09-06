@@ -1,6 +1,6 @@
-﻿using EmployeeWebAPIProject.Models;
+﻿using EmployeeWebAPI.Models;
 
-namespace EmployeeWebAPIProject.Dtos
+namespace EmployeeWebAPI.Dtos
 {
     public class UpdateAddressDto : BaseEntity
     {

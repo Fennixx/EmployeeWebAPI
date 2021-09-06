@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace EmployeeWebAPIProject.Models
+namespace EmployeeWebAPI.Models
 {
     public class Salary : BaseEntity
     {

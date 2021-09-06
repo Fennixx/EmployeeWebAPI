@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EmployeeWebAPIProject.Dtos
+namespace EmployeeWebAPI.Dtos
 {
     public class CreateSalaryDto
     {

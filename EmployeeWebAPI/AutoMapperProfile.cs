@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using EmployeeWebAPIProject.Dtos;
-using EmployeeWebAPIProject.Models;
+using EmployeeWebAPI.Dtos;
+using EmployeeWebAPI.Models;
 
-namespace EmployeeWebAPIProject
+namespace EmployeeWebAPI
 {
     public class AutoMapperProfile : Profile
     {

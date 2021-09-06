@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EmployeeWebAPIProject.Models
+namespace EmployeeWebAPI.Models
 {
     public class Employee : BaseEntity
     {

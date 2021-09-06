@@ -1,9 +1,9 @@
-﻿using EmployeeWebAPIProject.Dtos;
-using EmployeeWebAPIProject.Models;
+﻿using EmployeeWebAPI.Dtos;
+using EmployeeWebAPI.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace EmployeeWebAPIProject.Repositories
+namespace EmployeeWebAPI.Repositories
 {
     public interface IEmployeeRepository
     {

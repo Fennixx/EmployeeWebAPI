@@ -5,11 +5,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using EmployeeWebAPIProject.Data;
-using EmployeeWebAPIProject.Repositories;
+using EmployeeWebAPI.Data;
+using EmployeeWebAPI.Repositories;
 using System;
 
-namespace EmployeeWebAPIProject
+namespace EmployeeWebAPI
 {
     public class Startup
     {
@@ -29,7 +29,7 @@ namespace EmployeeWebAPIProject
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "EmployeeWebAPI Project", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "EmployeeWebAPI", Version = "v1" });
             });
             services.AddAutoMapper(typeof(Startup));
 
@@ -48,7 +48,7 @@ namespace EmployeeWebAPIProject
             app.UseSwagger(o => o.RouteTemplate = "{documentName}/swagger.json");
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/v1/swagger.json", "EmployeeWebAPI Project");
+                c.SwaggerEndpoint("/v1/swagger.json", "EmployeeWebAPI");
                 c.RoutePrefix = String.Empty;
             });
 

@@ -1,7 +1,7 @@
-﻿using EmployeeWebAPIProject.Models;
+﻿using EmployeeWebAPI.Models;
 using System;
 
-namespace EmployeeWebAPIProject.Dtos
+namespace EmployeeWebAPI.Dtos
 {
     public class GetSalaryDto : BaseEntity
     {

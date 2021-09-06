@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using EmployeeWebAPIProject.Dtos;
-using EmployeeWebAPIProject.Models;
-using EmployeeWebAPIProject.Repositories;
+using EmployeeWebAPI.Dtos;
+using EmployeeWebAPI.Models;
+using EmployeeWebAPI.Repositories;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace EmployeeWebAPIProject.Controllers
+namespace EmployeeWebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace EmployeeWebAPIProject.Models
+namespace EmployeeWebAPI.Models
 {
     public class City : BaseEntity
     {
